@@ -1,0 +1,14 @@
+[Unit]
+Description=Gunicorn for Shraddha's Job Tracker
+After=network.target
+
+[Service]
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=/home/ec2-user/shraddha_jobtracker
+Environment="PATH=/home/ec2-user/shraddha_jobtracker/.venv/bin"
+ExecStart=/home/ec2-user/shraddha_jobtracker/.venv/bin/gunicorn --workers 3 --bind 127.0.0.1:8000 jobtracker.wsgi:application
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,1 @@
+0 9 * * * /home/ec2-user/shraddha_jobtracker/.venv/bin/python /home/ec2-user/shraddha_jobtracker/manage.py send_followups >> /var/log/shraddha_jobtracker_cron.log 2>&1

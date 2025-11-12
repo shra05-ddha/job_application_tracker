@@ -1,0 +1,11 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h4>{{ app.title }} @ {{ app.company.name }}</h4>
+<ul class="list-group mb-3">
+  <li class="list-group-item"><strong>Status:</strong> {{ app.get_status_display }}</li>
+  <li class="list-group-item"><strong>Applied on:</strong> {{ app.applied_on }}</li>
+  <li class="list-group-item"><strong>Follow up on:</strong> {{ app.follow_up_on|default:"—" }}</li>
+  {% if app.notes %}<li class="list-group-item">{{ app.notes|linebreaks }}</li>{% endif %}
+</ul>
+<a href="/" class="btn btn-secondary">Back</a>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h4 class="mb-3">{{ action }} Application</h4>
+<form method="post" class="card p-3 shadow-sm">{% csrf_token %}
+  {{ form.as_p }}
+  <button class="btn btn-primary">Save</button>
+</form>
+{% endblock %}
